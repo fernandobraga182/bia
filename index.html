@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bia — a recepção do seu time no WhatsApp | Amanda Fitas</title>
+<meta name="description" content="Conheça a Bia: ela conversa com cada interessada na CRAF, entende o momento dela com carinho e leva as pessoas certas até a conversa com o seu time — 24h por dia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wine:#683B4A; --wine2:#9B5E72; --ink:#37252B; --muted:#816A71;
+    --blush:#FBF4F5; --blush2:#F4E7EB; --rose:#E7DADE; --linha:#EFE2E6;
+    --gold:#B08D6A; --branco:#fff;
+    --serif:'Playfair Display',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+    --wgrad:linear-gradient(135deg,#683B4A 0%,#8A4E63 55%,#9B5E72 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:2}
+  section{padding:84px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);background:var(--blush2);padding:8px 16px;border-radius:8px;margin-bottom:22px}
+  h2{font-family:var(--serif);font-size:46px;font-weight:700;letter-spacing:-.01em;line-height:1.12;margin-bottom:16px;color:var(--ink)}
+  h2 .hl{color:var(--wine);font-style:italic;font-weight:600}
+  .sub{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:48px}
+  .center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+  .spark{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:26px;color:var(--gold)}
+  .spark::before,.spark::after{content:"";height:1px;width:70px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .spark::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .spark span{font-size:18px}
+  .orb{position:absolute;border-radius:50%;filter:blur(75px);opacity:.4;z-index:0;pointer-events:none}
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  .js .reveal{opacity:0;transform:translateY(26px)}
+  .js .reveal.in{opacity:1;transform:none}
+
+  .hero{background:linear-gradient(180deg,#FBF4F5 0%,#F6E9ED 100%);padding:60px 0 90px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(155,94,114,.22),transparent 70%);right:-120px;top:-120px}
+  .hero::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(176,141,106,.16),transparent 70%);left:-140px;bottom:-120px}
+  .hero .wrap{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+  .badge{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--linha);color:var(--wine);padding:9px 18px;border-radius:100px;font-weight:600;font-size:13.5px;margin-bottom:26px;box-shadow:0 4px 14px -8px rgba(104,59,74,.35)}
+  .dot{width:9px;height:9px;border-radius:50%;background:#2fbf5a;box-shadow:0 0 0 4px rgba(47,191,90,.18);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(47,191,90,.18)}50%{box-shadow:0 0 0 8px rgba(47,191,90,.03)}}
+  .hero h1{font-family:var(--serif);font-size:58px;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:20px;color:var(--ink)}
+  .hero h1 em{color:var(--wine);font-style:italic;font-weight:600}
+  .hero p.lead{font-size:19px;max-width:560px;color:var(--muted)}
+  .hero .meta{display:flex;gap:11px;flex-wrap:wrap;margin-top:30px}
+  .chip{background:#fff;border:1px solid var(--linha);padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px;color:var(--ink)}
+  .scrollcue{margin-top:30px;font-size:14px;color:var(--wine);font-weight:600;display:inline-flex;gap:8px;align-items:center}
+
+  .phone{width:312px;justify-self:center;background:#241319;border-radius:42px;padding:12px;box-shadow:0 44px 80px -24px rgba(55,37,43,.55),0 0 0 2px rgba(255,255,255,.05);position:relative}
+  .phone .notch{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#241319;border-radius:0 0 16px 16px;z-index:5}
+  .screen{background:#EDE4E0;border-radius:32px;overflow:hidden;height:566px;display:flex;flex-direction:column}
+  .wahead{background:var(--wgrad);color:#fff;padding:34px 16px 12px;display:flex;align-items:center;gap:11px}
+  .ava{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--wine);font-weight:800;display:grid;place-items:center;font-size:18px;font-family:var(--serif);box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  .wahead .nm{font-weight:700;font-size:15px;line-height:1.1}
+  .wahead .on{font-size:11.5px;opacity:.85}
+  .wabody{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:8px;overflow:hidden;
+     background:linear-gradient(rgba(237,228,224,.7),rgba(237,228,224,.7)),repeating-linear-gradient(45deg,#e2d6d2 0 2px,transparent 2px 9px)}
+  .bub{max-width:82%;padding:8px 11px;border-radius:14px;font-size:12.6px;line-height:1.45;box-shadow:0 1px 1px rgba(0,0,0,.07);position:relative;color:var(--ink)}
+  .in{background:#fff;align-self:flex-start;border-top-left-radius:4px}
+  .out{background:#F3DCE4;align-self:flex-end;border-top-right-radius:4px}
+  .bub .tm{display:block;text-align:right;font-size:9.5px;color:#a18f95;margin-top:2px}
+  .tick{color:#5a9bd6;font-weight:700}
+  .reaction{align-self:flex-start;margin-top:-4px;margin-left:6px;background:#fff;border-radius:100px;padding:1px 6px;font-size:12px;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+  .typing{align-self:flex-start;background:#fff;padding:10px 13px;border-radius:14px;border-top-left-radius:4px;display:flex;gap:4px}
+  .typing i{width:6px;height:6px;border-radius:50%;background:#c6b8bd;display:inline-block;animation:bounce 1.3s infinite}
+  .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+  @keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+
+  .grid{display:grid;gap:22px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:#fff;border:1px solid var(--linha);border-radius:18px;padding:30px;transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -26px rgba(104,59,74,.4)}
+  .card .em{font-size:30px;display:block;margin-bottom:14px;line-height:1}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:7px}.card p{font-size:15px;color:var(--muted)}
+
+  .problem{background:var(--ink);color:#fff;border-radius:26px;padding:54px 48px;position:relative;overflow:hidden}
+  .problem h2{color:#fff}.problem h2 .hl{color:#E9B7C6}
+  .problem p{font-size:18px;color:rgba(255,255,255,.72);max-width:680px;margin:0 auto 6px}
+  .problem .pclose{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:21px;color:#E9B7C6}
+
+  .journey{background:var(--blush);border:1px solid var(--linha);border-radius:28px;padding:54px 44px;position:relative;overflow:hidden}
+  .step{display:flex;gap:24px;align-items:flex-start;position:relative;padding-bottom:30px}
+  .step:not(:last-child)::before{content:"";position:absolute;left:25px;top:54px;bottom:-4px;width:2px;background:linear-gradient(var(--wine),var(--wine2));opacity:.3}
+  .num{flex:0 0 52px;height:52px;border-radius:50%;background:var(--wgrad);color:#fff;font-family:var(--serif);font-weight:700;font-size:21px;display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(104,59,74,.55);z-index:2}
+  .step h3{font-size:19px;font-weight:700;margin-bottom:4px}.step p{color:var(--muted);font-size:15.5px}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .panel{border-radius:20px;padding:34px;border:1px solid var(--linha)}
+  .panel.yes{background:linear-gradient(180deg,#FBF1F4,#fff)}
+  .panel.no{background:linear-gradient(180deg,#F7EEEA,#fff)}
+  .panel h3{font-family:var(--serif);font-size:23px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+  .li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid rgba(104,59,74,.08);font-size:15.5px}
+  .li:first-of-type{border-top:none}
+  .tk{flex:0 0 24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;color:#fff;margin-top:1px}
+  .tk.v{background:var(--wine)}.tk.x{background:var(--gold)}
+
+  .voice{display:grid;grid-template-columns:1fr .82fr;gap:44px;align-items:center}
+  .quote-bub{background:#fff;border:1px solid var(--linha);border-radius:20px;border-top-left-radius:6px;padding:26px 28px;font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.5;color:var(--wine);box-shadow:0 24px 50px -30px rgba(104,59,74,.5);position:relative}
+  .quote-bub small{display:block;margin-top:12px;font-family:var(--sans);font-style:normal;font-size:13px;color:var(--muted);font-weight:600}
+  .traits{display:flex;flex-direction:column;gap:14px}
+  .trait{display:flex;gap:13px;align-items:flex-start;font-size:15.5px}
+  .trait .k{flex:0 0 30px;height:30px;border-radius:9px;background:var(--blush2);display:grid;place-items:center;font-size:15px;margin-top:1px}
+  .trait b{color:var(--ink)}
+
+  .temps{display:flex;flex-direction:column;gap:18px;max-width:760px;margin:0 auto}
+  .temp{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:center;background:#fff;border:1px solid var(--linha);border-radius:16px;padding:20px 24px}
+  .temp .lab{font-weight:700;font-size:16px;display:flex;align-items:center;gap:9px}
+  .temp .lab small{display:block;font-weight:500;font-size:12.5px;color:var(--muted)}
+  .temp .desc{font-size:15px;color:var(--muted)}
+  .track{height:14px;background:var(--blush2);border-radius:10px;overflow:hidden;margin-bottom:9px}
+  .fill{height:100%;border-radius:10px;background:var(--wgrad);width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+
+  .report{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .miniboard{background:#fff;border:1px solid var(--linha);border-radius:22px;padding:26px;box-shadow:0 30px 60px -34px rgba(104,59,74,.45)}
+  .mb-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-top:1px solid var(--linha);font-size:15px}
+  .mb-row:first-child{border-top:none}
+  .mb-row b{font-family:var(--serif);font-size:24px;color:var(--wine)}
+  .mb-bars{margin-top:8px;display:flex;gap:6px;align-items:flex-end;height:60px}
+  .mb-bars span{flex:1;background:var(--wgrad);border-radius:5px 5px 0 0;opacity:.85}
+  .report .cards3{display:grid;grid-template-columns:1fr;gap:14px}
+  .rcard{background:var(--blush);border:1px solid var(--linha);border-radius:14px;padding:18px 20px;display:flex;gap:13px;align-items:center}
+  .rcard .e{font-size:24px}.rcard b{font-size:15.5px}.rcard p{font-size:14px;color:var(--muted)}
+
+  .close{background:var(--wgrad);color:#fff;padding:74px 0;text-align:center;position:relative;overflow:hidden}
+  .close::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08);top:-160px;right:-120px}
+  .close .spark{color:rgba(255,255,255,.6)}
+  .close .spark::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.6))}
+  .close .spark::after{background:linear-gradient(90deg,rgba(255,255,255,.6),transparent)}
+  .close h2{color:#fff;margin-bottom:30px}
+  .winlist{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:760px;margin:0 auto 36px;text-align:left}
+  .win{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:13px;padding:16px 20px;font-weight:500;font-size:15.5px}
+  .win .e{font-size:20px}
+  .close .lead{font-size:18px;color:rgba(255,255,255,.9);max-width:640px;margin:0 auto 28px}
+  .cta{display:inline-block;background:#fff;color:var(--wine);font-weight:700;padding:17px 38px;border-radius:12px;font-size:16px;box-shadow:0 18px 40px -14px rgba(0,0,0,.4);transition:transform .2s}
+  .cta:hover{transform:translateY(-3px)}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:34px 0;text-align:center;font-size:13.5px}
+  footer .heart{color:#E9B7C6}
+
+  @media(max-width:880px){
+    .hero .wrap,.voice,.report,.g3,.g4,.duo,.temp,.winlist{grid-template-columns:1fr}
+    .hero h1{font-size:40px}h2{font-size:31px}.journey{padding:34px 22px}.problem,.close{padding:40px 24px}
+    .phone{margin-top:14px}.temp{gap:8px;text-align:left}.temp .lab{margin-bottom:4px}
+    .voice{gap:28px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal,.js .reveal{opacity:1 !important;transform:none !important;transition:none}
+    .dot,.typing i{animation:none}
+    .fill{transition:none}
+  }
+  @media print{
+    @page{margin:14mm}
+    *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+    .card:hover{transform:none}section{padding:48px 0}.fill{width:var(--w) !important;transition:none}
+    .reveal,.js .reveal{opacity:1 !important;transform:none !important}
+    .card,.panel,.temp,.rcard,.win,.step{break-inside:avoid}.journey,.problem,.close{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge"><span class="dot"></span> 💜 Atendimento do time · CRAF · Amanda Fitas</div>
+      <h1>Conheça a <em>Bia</em>,<br>a recepção do seu time no WhatsApp.</h1>
+      <p class="lead">Ela conversa com cada pessoa interessada na CRAF, entende o momento dela com carinho e leva as pessoas certas até a conversa com o seu time — 24 horas por dia, sem deixar ninguém esperando e sem deixar nenhuma oportunidade esfriar.</p>
+      <div class="meta">
+        <div class="chip">💬 No WhatsApp</div>
+        <div class="chip">🤍 Conversa como gente</div>
+        <div class="chip">🎯 Entende e agenda</div>
+        <div class="chip">🌙 24h por dia</div>
+      </div>
+      <div class="scrollcue">Veja como a Bia cuida das suas interessadas ↓</div>
+    </div>
+    <div class="phone reveal">
+      <div class="notch"></div>
+      <div class="screen">
+        <div class="wahead"><div class="ava">B</div><div><div class="nm">Bia · Time Amanda Fitas</div><div class="on">● online agora</div></div></div>
+        <div class="wabody">
+          <div class="bub out">Oi! acabei de fazer o quiz da CRAF 💜<span class="tm">09:41 <span class="tick">✓✓</span></span></div>
+          <div class="bub in">Oi, Marina! Que bom te ver por aqui 😊 Antes da gente seguir, me conta uma coisa: o que mais pesou pra você buscar isso agora?<span class="tm">09:41</span></div>
+          <div class="bub out">ando sentindo que quero fazer algo que ajude as pessoas de verdade<span class="tm">09:42 <span class="tick">✓✓</span></span></div>
+          <div class="reaction">💜</div>
+          <div class="bub in">Isso é lindo, Marina. É exatamente desse desejo que muita coisa boa começa. Posso te entender um pouquinho melhor, pra te ajudar do jeito certo?<span class="tm">09:42</span></div>
+          <div class="bub out">pode sim<span class="tm">09:43 <span class="tick">✓✓</span></span></div>
+          <div class="typing"><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section style="padding-bottom:40px">
+  <div class="wrap reveal">
+    <div class="problem">
+      <span class="orb" style="width:260px;height:260px;background:var(--wine2);right:-60px;bottom:-80px"></span>
+      <div class="center">
+        <div class="spark"><span>✦</span></div>
+        <h2>Toda interessada que chega e não é bem atendida na hora… <span class="hl">esfria.</span></h2>
+        <p>Você investe pra atrair pessoas interessadas. Mas pessoa interessada tem um tempo curto: se ninguém responde rápido, com atenção, ela some — vai cuidar da vida e a oportunidade vai junto.</p>
+        <p>E quando o time tenta dar conta de tudo, gasta energia com quem ainda não está pronto e acaba sem fôlego pra quem está.</p>
+        <div class="pclose">A Bia existe pra isso não acontecer mais.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:30px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Quem é a Bia</span>
+    <h2>Uma pessoa de verdade <span class="hl">cuidando das suas interessadas.</span></h2>
+    <p class="sub">A Bia é parte do seu time. Ela conversa pelo WhatsApp com calor, escuta, se emociona quando a pessoa se abre e fala do jeito que você fala — acolhendo antes de qualquer coisa, com honestidade e sem pressão. Quem conversa com ela sente que está falando com alguém que se importa de verdade.</p>
+  </div>
+  <div class="wrap grid g3 reveal">
+    <div class="card"><span class="em">🌙</span><h3>No WhatsApp, 24h por dia</h3><p>Manhã, noite, fim de semana — ninguém fica sem resposta.</p></div>
+    <div class="card"><span class="em">🤍</span><h3>Parece (e cuida como) gente</h3><p>Mensagens curtas, no ritmo do WhatsApp, com o carinho e o vocabulário da sua marca.</p></div>
+    <div class="card"><span class="em">💜</span><h3>Sempre transparente</h3><p>A Bia é do seu time — ela nunca se passa por você, Amanda, e nunca finge ser outra coisa.</p></div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">O papel dela</span>
+    <h2>Ela prepara o terreno. <span class="hl">Seu time só conversa com quem está pronto.</span></h2>
+    <p class="sub">A Bia não vende e não fala de valores — de propósito. O papel dela é acolher, entender o momento de cada pessoa e agendar a conversa com o seu time. Quem decide a melhor solução e cuida da venda é o time, na conversa. Assim seu time chega na call com o caminho já aquecido.</p>
+  </div>
+  <div class="wrap duo reveal">
+    <div class="panel yes"><h3>💜 O que a Bia faz</h3>
+      <div class="li"><span class="tk v">✓</span> Acolhe cada pessoa com carinho</div>
+      <div class="li"><span class="tk v">✓</span> Entende o momento de cada uma</div>
+      <div class="li"><span class="tk v">✓</span> Identifica quem está mais pronta</div>
+      <div class="li"><span class="tk v">✓</span> Agenda, remarca e cancela a conversa sozinha</div>
+      <div class="li"><span class="tk v">✓</span> Volta pra quem sumiu, com leveza</div>
+      <div class="li"><span class="tk v">✓</span> Te entrega tudo organizado</div>
+    </div>
+    <div class="panel no"><h3>🚫 O que a Bia nunca faz</h3>
+      <div class="li"><span class="tk x">✕</span> Não fala preço nem negocia (isso é do time)</div>
+      <div class="li"><span class="tk x">✕</span> Não promete resultado</div>
+      <div class="li"><span class="tk x">✕</span> Não pressiona nem insiste demais</div>
+      <div class="li"><span class="tk x">✕</span> Não se passa por você</div>
+      <div class="li"><span class="tk x">✕</span> Não força quem disse "não"</div>
+      <div class="li"><span class="tk x">✕</span> Não dá conselho clínico ou diagnóstico</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">O jeito dela</span>
+    <h2>O segredo está <span class="hl">no jeito de falar.</span></h2>
+  </div>
+  <div class="wrap voice reveal">
+    <div class="quote-bub">
+      "Quero ser sincera com você 💜 Antes da gente seguir, me conta: o que mais pesa no seu momento hoje?"
+      <small>— a Bia, no WhatsApp</small>
+    </div>
+    <div class="traits">
+      <div class="trait"><span class="k">🫶</span><div><b>Acolhe antes de tudo.</b> Valida o que a pessoa sente antes de qualquer pergunta.</div></div>
+      <div class="trait"><span class="k">🤍</span><div><b>Honesta de verdade.</b> "Quero ser sincera com você" é a marca dela — nada de empurrar o que não faz sentido.</div></div>
+      <div class="trait"><span class="k">💬</span><div><b>Fala simples.</b> Sem jargão, sem frieza, no ritmo do WhatsApp. Usa o nome da pessoa.</div></div>
+      <div class="trait"><span class="k">🙏</span><div><b>Respeita o tempo.</b> Reage com carinho nos momentos certos e respeita um "não" sem insistir.</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Passo a passo</span>
+    <h2>Do "oi" até a conversa marcada — <span class="hl">como a Bia conduz.</span></h2>
+  </div>
+  <div class="wrap reveal">
+    <div class="journey">
+      <span class="orb" style="width:240px;height:240px;background:var(--wine2);right:-60px;top:-60px"></span>
+      <div class="step"><div class="num">1</div><div><h3>A pessoa demonstra interesse</h3><p>Ela preenche o seu quiz ou a aplicação e é levada pro WhatsApp da Bia.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>A Bia recebe com carinho</h3><p>Já sabe de onde a pessoa veio, chama pelo nome e abre a conversa acolhendo o momento dela.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Entende quem é a pessoa</h3><p>Com perguntas naturais, uma de cada vez, descobre o momento, o desejo e o que faz sentido pra ela — sem parecer formulário.</p></div></div>
+      <div class="step"><div class="num">4</div><div><h3>Percebe quem está mais pronta</h3><p>A Bia identifica a "temperatura" de cada pessoa pra dar a prioridade certa — sem deixar ninguém de lado.</p></div></div>
+      <div class="step"><div class="num">5</div><div><h3>Agenda a conversa com o time</h3><p>Toda pessoa com interesse é convidada; a Bia oferece os horários e marca — e ainda remarca ou cancela sozinha, se precisar.</p></div></div>
+      <div class="step"><div class="num">6</div><div><h3>Não deixa esfriar</h3><p>Se a pessoa some, a Bia volta no tempo certo, com leveza — e sabe a hora de parar.</p></div></div>
+      <div class="step"><div class="num">7</div><div><h3>Passa pro humano quando precisa</h3><p>Se a pessoa pede falar com alguém ou surge algo delicado, ela conecta com o time.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Temperatura</span>
+    <h2>A Bia sabe quem está pronta agora — <span class="hl">e quem precisa de um tempo.</span></h2>
+    <p class="sub">Toda pessoa interessada é bem cuidada. A diferença é a prioridade: assim seu time foca primeiro em quem está mais perto de decidir, sem esquecer de ninguém.</p>
+  </div>
+  <div class="wrap reveal">
+    <div class="temps bars">
+      <div class="temp">
+        <div class="lab">🔥 Pronta agora<small>topo da fila</small></div>
+        <div><div class="track"><div class="fill" style="--w:100%"></div></div><div class="desc">Claramente decidida e no momento certo.</div></div>
+      </div>
+      <div class="temp">
+        <div class="lab">🌤️ Quase lá<small>prioridade média</small></div>
+        <div><div class="track"><div class="fill" style="--w:66%"></div></div><div class="desc">Tem interesse, precisa de um pouco mais de conversa e clareza.</div></div>
+      </div>
+      <div class="temp">
+        <div class="lab">❄️ No comecinho<small>com cuidado</small></div>
+        <div><div class="track"><div class="fill" style="--w:38%"></div></div><div class="desc">Está começando a jornada. A Bia acolhe, planta uma semente e convida do mesmo jeito.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Follow-up</span>
+    <h2>Aquela pessoa que "ia pensar" <span class="hl">não some mais.</span></h2>
+    <p class="sub">Quando alguém para de responder, a Bia volta — no tempo certo, com carinho, nunca enchendo. Ela retoma a conversa, tira a última dúvida e reabre a porta pro próximo passo. E quando percebe que não é o momento, encerra com elegância, deixando a porta aberta pra quando a pessoa quiser voltar. Você para de perder gente no meio do caminho.</p>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="wrap center reveal">
+    <span class="eyebrow">Transparência</span>
+    <h2>Você enxerga tudo, <span class="hl">em números claros.</span></h2>
+    <p class="sub">Nada de caixa-preta. A qualquer momento você vê o que a Bia fez — e tem clareza do quanto ela faz pelo seu time.</p>
+  </div>
+  <div class="wrap report reveal">
+    <div class="miniboard" aria-hidden="true">
+      <div class="mb-row"><span>Pessoas que chegaram</span><b>—</b></div>
+      <div class="mb-row"><span>Conversas agendadas</span><b>—</b></div>
+      <div class="mb-row"><span>Prontas agora 🔥</span><b>—</b></div>
+      <div class="mb-bars">
+        <span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:62%"></span><span style="height:78%"></span><span style="height:48%"></span>
+      </div>
+      <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px">Seu painel, sempre atualizado</div>
+    </div>
+    <div class="cards3">
+      <div class="rcard"><span class="e">👀</span><div><b>Quem está chegando</b><p>Quantas pessoas vieram e de onde.</p></div></div>
+      <div class="rcard"><span class="e">📅</span><div><b>Quantas conversas marcadas</b><p>E a temperatura de cada pessoa.</p></div></div>
+      <div class="rcard"><span class="e">💬</span><div><b>Por que algumas ainda não</b><p>Os motivos de quem não quis marcar agora.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap reveal">
+    <div class="spark"><span>✦</span></div>
+    <h2>Imagine seu time só conversando <span style="font-style:italic;color:#F4D7E0">com quem está pronto.</span></h2>
+    <div class="winlist">
+      <div class="win"><span class="e">💜</span> Nenhuma interessada esperando ou esquecida — atendimento humano 24h.</div>
+      <div class="win"><span class="e">🎯</span> Seu time falando só com quem já foi acolhido e está no momento certo.</div>
+      <div class="win"><span class="e">🔁</span> Quem "ia pensar" recebe um cuidado a mais, na hora certa.</div>
+      <div class="win"><span class="e">📊</span> Você acompanha tudo, com transparência, sem depender de ninguém.</div>
+    </div>
+    <p class="lead">A Bia cuida da porta de entrada com o carinho da sua marca, pra o seu time fazer o que faz de melhor: transformar vidas.</p>
+    <a href="#" class="cta">Vamos colocar a Bia pra cuidar das suas interessadas? 💜</a>
+  </div>
+</section>
+
+<footer>
+  Bia · a recepção digital do time da Amanda Fitas — feito com <span class="heart">💜</span> pela Nexus.
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  var bio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('.fill').forEach(function(f){f.style.width=f.style.getPropertyValue('--w')});bio.unobserve(e.target)}})},{threshold:.3});
+  document.querySelectorAll('.bars').forEach(function(el){bio.observe(el)});
+  window.addEventListener('load',function(){setTimeout(function(){document.querySelectorAll('.reveal:not(.in)').forEach(function(e){e.classList.add('in')})},2400)});
+</script>
+</body>
+</html>
