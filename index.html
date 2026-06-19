@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Como a Bia se comporta — Manual | Time Amanda Fitas</title>
-<meta name="description" content="O guia completo do comportamento da Bia: como ela recebe cada pessoa, o que pergunta, como decide a prioridade, como agenda e como age em cada situação.">
+<meta name="description" content="O guia completo do comportamento da Bia: passivo e ativo, como ela recebe cada pessoa, o que pergunta, como decide a prioridade, como agenda e como age em cada situação.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
@@ -91,6 +91,7 @@
   .pitem b{color:var(--ink)}
 
   .callout{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(180deg,#FBF1F4,#fff);border:1px solid var(--linha);border-left:4px solid var(--wine);border-radius:14px;padding:18px 22px;margin:0 0 22px 68px;max-width:760px}
+  .callout.mt{margin-top:22px;margin-bottom:0}
   .callout .k{font-size:22px}.callout p{font-size:15px;color:var(--ink)}
   @media(max-width:880px){.callout{margin-left:0}}
   .temps{display:flex;flex-direction:column;gap:14px;margin-left:68px;max-width:820px}
@@ -102,6 +103,14 @@
   .track{height:13px;background:var(--blush2);border-radius:10px;overflow:hidden;margin-bottom:8px}
   .fill{height:100%;border-radius:10px;background:var(--wgrad);width:0;transition:width 1.3s cubic-bezier(.2,.8,.2,1)}
   @media(max-width:760px){.temp{grid-template-columns:1fr;gap:8px}}
+
+  .cad{display:flex;flex-direction:column;gap:0;margin:6px 0 0 68px;max-width:680px}
+  @media(max-width:880px){.cad{margin-left:0}}
+  .cstep{display:flex;gap:18px;align-items:flex-start;position:relative;padding-bottom:18px}
+  .cstep:not(:last-child)::before{content:"";position:absolute;left:19px;top:42px;bottom:-2px;width:2px;background:linear-gradient(var(--wine),var(--wine2));opacity:.3}
+  .cstep .cn{flex:0 0 40px;height:40px;border-radius:12px;background:var(--blush2);color:var(--wine);font-weight:700;font-size:13px;display:grid;place-items:center;z-index:2}
+  .cstep .ct{font-size:15px;color:var(--ink);padding-top:8px}
+  .cstep .ct b{color:var(--wine)}
 
   .grid{display:grid;gap:18px}
   .g2{grid-template-columns:1fr 1fr}
@@ -160,18 +169,19 @@
     *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
     section{padding:34px 0}.fill{width:var(--w) !important;transition:none}
     .reveal,.js .reveal{opacity:1 !important;transform:none !important}
-    .ocard,.scard,.pitem,.temp,.hcard,.gitem,.chat,.guard{break-inside:avoid}
+    .ocard,.scard,.pitem,.temp,.hcard,.gitem,.chat,.guard,.cstep{break-inside:avoid}
   }
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <header class="hero">
   <div class="wrap">
     <div>
       <div class="badge"><span class="dot"></span> 💜 Manual de comportamento · Bia · Time Amanda Fitas</div>
       <h1>Como a <em>Bia</em> se comporta — tudo o que acontece, situação por situação.</h1>
-      <p class="h-lead">Este é o guia completo do jeito da Bia: como ela recebe cada pessoa, o que pergunta, como decide a prioridade, como agenda e como age em cada situação. Sem caixa-preta — exatamente o que vai acontecer.</p>
+      <p class="h-lead">Este é o guia completo do jeito da Bia: como ela recebe (ou aborda) cada pessoa, o que pergunta, como decide a prioridade, como agenda e como age em cada situação. Sem caixa-preta — exatamente o que vai acontecer.</p>
       <div class="meta">
         <div class="chip">💬 No WhatsApp</div>
         <div class="chip">🤍 Fala como gente</div>
@@ -195,33 +205,37 @@
   </div>
 </header>
 
+<!-- ÍNDICE -->
 <section style="padding:46px 0">
   <div class="wrap reveal">
     <div class="index">
       <h3>O que tem neste guia</h3>
       <div class="idxgrid">
-        <a href="#s1"><b>1</b> Como a conversa começa</a>
-        <a href="#s2"><b>2</b> O jeito dela de falar</a>
-        <a href="#s3"><b>3</b> Entendendo o momento</a>
-        <a href="#s4"><b>4</b> A prioridade (temperatura)</a>
-        <a href="#s5"><b>5</b> Quando precisa investigar</a>
-        <a href="#s6"><b>6</b> O agendamento</a>
-        <a href="#s7"><b>7</b> Remarcar e cancelar</a>
-        <a href="#s8"><b>8</b> Dúvidas e objeções</a>
-        <a href="#s9"><b>9</b> Situações especiais</a>
-        <a href="#s10"><b>10</b> Quando alguém some</a>
-        <a href="#s11"><b>11</b> Quando não é o momento</a>
-        <a href="#s12"><b>12</b> Os limites dela</a>
-        <a href="#s13"><b>13</b> Quando ela chama o time</a>
+        <a href="#s1"><b>1</b> Como a conversa começa (passivo)</a>
+        <a href="#s2"><b>2</b> Quando ela aborda primeiro (ativo)</a>
+        <a href="#s3"><b>3</b> O jeito dela de falar</a>
+        <a href="#s4"><b>4</b> Entendendo o momento</a>
+        <a href="#s5"><b>5</b> A prioridade (temperatura)</a>
+        <a href="#s6"><b>6</b> Quando precisa investigar</a>
+        <a href="#s7"><b>7</b> O agendamento</a>
+        <a href="#s8"><b>8</b> Remarcar e cancelar</a>
+        <a href="#s9"><b>9</b> Dúvidas e objeções</a>
+        <a href="#s10"><b>10</b> Situações especiais</a>
+        <a href="#s11"><b>11</b> Quando alguém some (cadência)</a>
+        <a href="#s12"><b>12</b> Quando não é o momento</a>
+        <a href="#s13"><b>13</b> Os limites dela</a>
+        <a href="#s14"><b>14</b> Quando ela chama o time</a>
+        <a href="#s15"><b>15</b> O relatório que você acompanha</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- 1 -->
 <section id="s1">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">1</div><h2>Como a conversa <span class="hl">começa</span></h2></div>
-    <p class="lead">A pessoa preenche o quiz ou a aplicação e é levada pro WhatsApp. <b>É a pessoa quem manda a primeira mensagem</b> — a Bia nunca aborda ninguém do nada. Quando a mensagem chega, a Bia já sabe de onde a pessoa veio e recebe com carinho, sem reperguntar o que ela já respondeu no formulário.</p>
+    <div class="shead"><div class="snum">1</div><h2>Como a conversa começa <span class="hl">(modo passivo)</span></h2></div>
+    <p class="lead">No modo passivo — o padrão da maioria dos funis — a pessoa preenche o quiz ou a aplicação, é levada pro WhatsApp e <b>manda a primeira mensagem</b>. A Bia já recebe sabendo de onde ela veio, com carinho, sem reperguntar o que ela respondeu no formulário. (Em alguns funis ela trabalha no modo ativo e dá o primeiro passo — é a próxima seção.)</p>
     <p class="clabel">Quando veio do quiz / aplicação</p>
     <div class="chat">
       <div class="bub out">Oi! acabei de responder o quiz 💜<span class="tm">10:02</span></div>
@@ -237,9 +251,26 @@
 
 <div class="divider"></div>
 
+<!-- 2 — MODO ATIVO -->
 <section id="s2">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">2</div><h2>O jeito dela <span class="hl">de falar</span></h2></div>
+    <div class="shead"><div class="snum">2</div><h2>Quando ela <span class="hl">aborda primeiro (modo ativo)</span></h2></div>
+    <p class="lead">Em alguns funis — você liga ou desliga quando quiser — a Bia trabalha no <b>modo ativo</b>: quando a pessoa demonstra interesse mas não escreve por conta própria, é <b>a Bia quem dá o primeiro passo</b>. Ela aborda <b>rápido</b>, enquanto o interesse ainda está quente (questão de minutos), com a mesma delicadeza de sempre e se apresentando como do time da Amanda.</p>
+    <p class="clabel">A Bia inicia a conversa</p>
+    <div class="chat">
+      <div class="bub in">Oi, Marina! Aqui é do time da Amanda Fitas 💜 Vi que você respondeu o quiz da CRAF e quis te chamar pra entender melhor o seu momento. Posso te fazer só algumas perguntas rápidas?<span class="tm">10:34</span></div>
+      <div class="bub out">oi! pode sim 😊<span class="tm">10:36</span></div>
+    </div>
+    <div class="callout mt"><span class="k">🎛️</span><p><b>Passivo ou ativo é uma escolha sua, por funil.</b> No ativo, a Bia toma a iniciativa; no passivo, ela espera a pessoa escrever. A partir do primeiro contato, o jeito de conduzir é o mesmo — tudo o que vem nas próximas seções vale pros dois.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="wrap reveal">
+    <div class="shead"><div class="snum">3</div><h2>O jeito dela <span class="hl">de falar</span></h2></div>
     <p class="lead">O que faz a Bia parecer uma pessoa de verdade do seu time — e não um atendimento robótico.</p>
     <div class="plist">
       <div class="pitem"><span class="k">🫶</span><div><b>Acolhe antes de perguntar.</b> Valida o que a pessoa sente primeiro — gente antes de processo.</div></div>
@@ -254,9 +285,10 @@
 
 <div class="divider"></div>
 
-<section id="s3">
+<!-- 4 -->
+<section id="s4">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">3</div><h2>Entendendo <span class="hl">o momento</span></h2></div>
+    <div class="shead"><div class="snum">4</div><h2>Entendendo <span class="hl">o momento</span></h2></div>
     <p class="lead">Com perguntas naturais, uma de cada vez, a Bia descobre o momento da pessoa: se já cuida de pessoas hoje, em que estágio está, a motivação e a intenção. Entre uma pergunta e a próxima, ela <b>reage ao que a pessoa disse</b> antes de perguntar de novo — nunca emenda perguntas. E quando a pessoa revela um desejo, ela acolhe e aprofunda naquilo, que é o ouro da conversa.</p>
     <div class="chat">
       <div class="bub out">ando sentindo que quero fazer algo que ajude as pessoas de verdade<span class="tm">10:09</span></div>
@@ -269,9 +301,10 @@
 
 <div class="divider"></div>
 
-<section id="s4">
+<!-- 5 -->
+<section id="s5">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">4</div><h2>A prioridade <span class="hl">(temperatura)</span></h2></div>
+    <div class="shead"><div class="snum">5</div><h2>A prioridade <span class="hl">(temperatura)</span></h2></div>
     <p class="lead">A Bia percebe quem está mais pronta pra dar a prioridade certa — mas <b>toda pessoa com interesse é convidada pra conversa</b>. Ninguém é dispensado por causa de renda.</p>
     <div class="callout"><span class="k">⚖️</span><p><b>Renda baixa não rebaixa ninguém sozinha.</b> Na dúvida, a Bia investiga com honestidade — porque o formulário não conta tudo (cônjuge, reserva, uma renda extra).</p></div>
     <div class="temps bars">
@@ -297,9 +330,10 @@
 
 <div class="divider"></div>
 
-<section id="s5">
+<!-- 6 -->
+<section id="s6">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">5</div><h2>Quando precisa <span class="hl">investigar</span></h2></div>
+    <div class="shead"><div class="snum">6</div><h2>Quando precisa <span class="hl">investigar</span></h2></div>
     <p class="lead">Antes de mudar a prioridade de alguém, a Bia sonda com carinho — nunca como interrogatório. Três situações e exatamente o que ela diz:</p>
     <p class="clabel">Renda mais baixa, mas demonstrou interesse</p>
     <div class="chat"><div class="bub in">Marina, antes de seguir quero te entender melhor: se a CRAF fizer sentido pra você, sua intenção seria investir agora ou ainda está pesquisando? E essa decisão é você quem toma?<span class="tm">10:14</span></div></div>
@@ -312,9 +346,10 @@
 
 <div class="divider"></div>
 
-<section id="s6">
+<!-- 7 -->
+<section id="s7">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">6</div><h2>O <span class="hl">agendamento</span></h2></div>
+    <div class="shead"><div class="snum">7</div><h2>O <span class="hl">agendamento</span></h2></div>
     <p class="lead">Quando faz sentido, a Bia gera valor com 1–2 diferenciais da CRAF que conectam com o desejo da pessoa e convida pra <b>uma conversa com o time</b> (gratuita) — ela usa sempre esse termo amigável, nunca "sessão de diagnóstico". No "sim", ela mesma abre a agenda e oferece os <b>horários reais</b>. Se forem muitos, pergunta o período e dá 2–3 opções. <b>Nunca inventa horário</b> — a pessoa escolhe entre os que existem.</p>
     <div class="chat">
       <div class="bub in">Pelo que você me contou, faz muito sentido a gente conversar com calma 💜 O próximo passo é uma conversa com o nosso time, gratuita, pra entender o seu momento e ver o melhor caminho pra você. Posso já te separar um horário?<span class="tm">10:22</span></div>
@@ -327,9 +362,10 @@
 
 <div class="divider"></div>
 
-<section id="s7">
+<!-- 8 -->
+<section id="s8">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">7</div><h2>Remarcar e <span class="hl">cancelar</span></h2></div>
+    <div class="shead"><div class="snum">8</div><h2>Remarcar e <span class="hl">cancelar</span></h2></div>
     <p class="lead">A agenda inteira é com a Bia. Se a pessoa quiser mudar o horário, <b>ela mesma remarca</b>; se quiser desmarcar, <b>ela mesma cancela</b> — com carinho e deixando a porta aberta pra remarcar quando quiser. Ela não passa a agenda pra mais ninguém.</p>
     <div class="chat">
       <div class="bub out">preciso desmarcar quinta, deu um imprevisto<span class="tm">11:40</span></div>
@@ -340,9 +376,10 @@
 
 <div class="divider"></div>
 
-<section id="s8">
+<!-- 9 -->
+<section id="s9">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">8</div><h2>Dúvidas e <span class="hl">objeções</span></h2></div>
+    <div class="shead"><div class="snum">9</div><h2>Dúvidas e <span class="hl">objeções</span></h2></div>
     <p class="lead">Em toda dúvida, a Bia faz o mesmo: valida o que a pessoa trouxe, responde com verdade e reconduz pra conversa com o time. Ela nunca força, nunca fala preço e nunca promete desconto.</p>
     <div class="grid g2">
       <div class="ocard"><div class="q"><span class="qi">💰</span> "Tá caro / não tenho esse dinheiro agora"</div><div class="a">Ela <em>não fala valor</em>. "O valor e as condições o time apresenta na conversa, junto com tudo que está incluso — assim você vê se faz sentido pro seu momento. Antes disso: é uma questão de prioridade, de encaixar no orçamento ou de forma de pagamento?"</div></div>
@@ -360,14 +397,16 @@
 
 <div class="divider"></div>
 
-<section id="s9">
+<!-- 10 -->
+<section id="s10">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">9</div><h2>Situações <span class="hl">especiais</span></h2></div>
+    <div class="shead"><div class="snum">10</div><h2>Situações <span class="hl">especiais</span></h2></div>
     <p class="lead">Casos que fogem do roteiro comum — e como a Bia lida com cada um.</p>
     <div class="grid g2">
       <div class="scard"><div class="t"><span class="e">🙋‍♀️</span> Pede pra falar com a Amanda</div><p>"A Amanda não faz esse primeiro papo, mas o time dela cuida de tudo com o mesmo carinho." Ela oferece agendar. Só conecta com um humano na hora se a pessoa insistir em falar com alguém agora.</p></div>
       <div class="scard"><div class="t"><span class="e">🤖</span> Pergunta se é robô</div><p>Ela não entra nesse assunto: responde com naturalidade e volta a cuidar da pessoa. E nunca se passa pela Amanda.</p></div>
       <div class="scard"><div class="t"><span class="e">🎀</span> Já é aluna / cliente da Amanda</div><p>Não trata como lead novo: acolhe, reconhece e direciona pro time/suporte certo.</p></div>
+      <div class="scard"><div class="t"><span class="e">🔀</span> Parece mais "querer cuidar de si"</div><p>A Bia sabe que existe outro caminho da Amanda pra quem está bem no comecinho, mas <b>nunca oferece nem vende isso</b> — ela convida pra conversa do mesmo jeito, e é o time que avalia o melhor caminho com a pessoa.</p></div>
       <div class="scard"><div class="t"><span class="e">↩️</span> Assunto fora do tema</div><p>Com gentileza, traz a conversa de volta pro foco; não opina sobre o que não é dela.</p></div>
       <div class="scard"><div class="t"><span class="e">😄</span> Mensagem de brincadeira ou bem curtinha</div><p>"kkk", "hmm", "ah sei" — ela entra no mesmo clima leve, sem ficar robótica, e reconduz com leveza.</p></div>
     </div>
@@ -376,21 +415,31 @@
 
 <div class="divider"></div>
 
-<section id="s10">
+<!-- 11 — FOLLOW-UP / CADÊNCIA -->
+<section id="s11">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">10</div><h2>Quando alguém <span class="hl">some</span></h2></div>
-    <p class="lead">Se a pessoa para de responder, a Bia volta — no tempo certo, espaçando, com carinho e nunca enchendo. Ela retoma a conversa, tira a última dúvida e reabre a porta pro próximo passo. E <b>sabe a hora de parar</b>: quando percebe que não é o momento, encerra com elegância, deixando a porta aberta pra quando a pessoa quiser voltar.</p>
-    <div class="chat">
-      <div class="bub in">Oi Marina, passando só pra saber como você está 💜 Ficou alguma dúvida do que a gente conversou? Se quiser, ainda consigo te separar um horário pra aquela conversa com o time.<span class="tm">um tempo depois</span></div>
+    <div class="shead"><div class="snum">11</div><h2>Quando alguém some <span class="hl">(a cadência de follow-up)</span></h2></div>
+    <p class="lead">Se a pessoa não responde, a Bia volta sozinha — em alguns toques <b>espaçados</b> ao longo de cerca de duas semanas, com carinho e nunca uma mensagem atrás da outra. Ela retoma a conversa, tira a última dúvida e reabre a porta pro próximo passo. O último toque é uma <b>despedida gentil</b>, que muitas vezes reativa quem tinha sumido e fecha o ciclo com elegância.</p>
+    <div class="cad">
+      <div class="cstep"><div class="cn">na hora</div><div class="ct">Primeiro toque, logo que percebe que a pessoa parou de responder.</div></div>
+      <div class="cstep"><div class="cn">+ horas</div><div class="ct">Uma lembrança leve, ainda no mesmo dia.</div></div>
+      <div class="cstep"><div class="cn">+ dias</div><div class="ct">Volta uma ou duas vezes, com <b>espaços cada vez maiores</b> (dias entre um e outro).</div></div>
+      <div class="cstep"><div class="cn">despedida</div><div class="ct">Toque final de encerramento — sem peso, deixando a porta aberta.</div></div>
     </div>
+    <p class="clabel" style="margin-top:24px">Um toque de retomada</p>
+    <div class="chat"><div class="bub in">Oi Marina, passando só pra saber como você está 💜 Ficou alguma dúvida do que a gente conversou? Se quiser, ainda consigo te separar um horário pra aquela conversa com o time.<span class="tm">um tempo depois</span></div></div>
+    <p class="clabel" style="margin-top:20px">A despedida gentil</p>
+    <div class="chat"><div class="bub in">Marina, não quero te incomodar 💜 Vou te deixar à vontade — quando fizer sentido pra você, é só me chamar aqui que eu te ajudo. Fico por aqui, tá?<span class="tm">~duas semanas depois</span></div></div>
+    <div class="callout mt"><span class="k">🤝</span><p><b>Ela sabe a hora de parar.</b> A Bia encerra na hora se a pessoa pede pra não receber mais mensagens, se diz um "não" claro, ou ao fim da sequência — nunca insiste além disso. E se alguém marcou e não apareceu, ela reabre com carinho pra remarcar. <b>Quantos toques e os intervalos são ajustáveis por funil</b> — você decide o ritmo.</p></div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<section id="s11">
+<!-- 12 -->
+<section id="s12">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">11</div><h2>Quando não é <span class="hl">o momento</span></h2></div>
+    <div class="shead"><div class="snum">12</div><h2>Quando não é <span class="hl">o momento</span></h2></div>
     <p class="lead">Pra quem claramente não tem fit nem condição agora, a Bia encerra com cuidado — sem pressão e sem empurrar nada.</p>
     <div class="chat">
       <div class="bub in">Marina, obrigada de coração por compartilhar seu momento comigo 💜 Vou deixar a porta aberta: quando fizer sentido pra você dar esse passo, é só me chamar aqui. Te desejo tudo de bom.<span class="tm">10:31</span></div>
@@ -400,9 +449,10 @@
 
 <div class="divider"></div>
 
-<section id="s12">
+<!-- 13 -->
+<section id="s13">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">12</div><h2>Os limites dela <span class="hl">— o que a Bia nunca faz</span></h2></div>
+    <div class="shead"><div class="snum">13</div><h2>Os limites dela <span class="hl">— o que a Bia nunca faz</span></h2></div>
     <p class="lead">As regras inquebráveis. É o que mantém a Bia confiável, honesta e fiel à sua marca.</p>
     <div class="guard">
       <span class="orb" style="width:240px;height:240px;background:var(--wine2);right:-60px;bottom:-80px"></span>
@@ -424,9 +474,10 @@
 
 <div class="divider"></div>
 
-<section id="s13">
+<!-- 14 -->
+<section id="s14">
   <div class="wrap reveal">
-    <div class="shead"><div class="snum">13</div><h2>Quando ela <span class="hl">chama o time</span></h2></div>
+    <div class="shead"><div class="snum">14</div><h2>Quando ela <span class="hl">chama o time</span></h2></div>
     <p class="lead">A Bia resolve quase tudo sozinha — inclusive remarcar e cancelar. Ela só passa pra um humano em três casos. Quando passa, avisa que o time vai assumir e para de conduzir aquele caso.</p>
     <div class="hand">
       <div class="hcard"><div class="n">1</div><p>A pessoa pede explicitamente falar com alguém ou com a Amanda agora.</p></div>
@@ -436,6 +487,26 @@
   </div>
 </section>
 
+<div class="divider"></div>
+
+<!-- 15 — RELATÓRIO -->
+<section id="s15">
+  <div class="wrap reveal">
+    <div class="shead"><div class="snum">15</div><h2>O relatório <span class="hl">que você acompanha</span></h2></div>
+    <p class="lead">Você não fica no escuro. A qualquer momento você abre o seu painel e vê o trabalho da Bia em números claros — só os seus dados, sem precisar pedir nada a ninguém. É a Bia prestando contas.</p>
+    <div class="grid g2">
+      <div class="scard"><div class="t"><span class="e">👀</span> Quem chegou</div><p>Quantas pessoas entraram no período e por qual funil vieram.</p></div>
+      <div class="scard"><div class="t"><span class="e">🧭</span> Em que pé está cada uma</div><p>O status de cada pessoa: nova, em conversa, agendada, sem resposta, faltou na reunião ou encerrada.</p></div>
+      <div class="scard"><div class="t"><span class="e">📅</span> Conversas marcadas</div><p>Quantas a Bia agendou — e a temperatura de cada uma (quente, morna ou no comecinho).</p></div>
+      <div class="scard"><div class="t"><span class="e">💬</span> Por que algumas não marcaram</div><p>Os motivos organizados: investimento, momento, indecisão, "quer pensar", sumiu no meio…</p></div>
+      <div class="scard"><div class="t"><span class="e">⚡</span> Velocidade e esforço</div><p>Quão rápido a Bia respondeu (ou abordou) e quantos toques ela deu até a pessoa avançar.</p></div>
+      <div class="scard"><div class="t"><span class="e">💜</span> Quanto ela se paga</div><p>O custo da Bia no período e o custo por conversa agendada — de forma simples, pra você ver o retorno.</p></div>
+    </div>
+    <div class="callout mt"><span class="k">📋</span><p><b>E pessoa por pessoa.</b> Pra cada lead, um resuminho do que rolou, o status atual e o próximo passo — a Bia presta contas de cada um, não só do total. Você (e só você) enxerga o relatório da sua Bia.</p></div>
+  </div>
+</section>
+
+<!-- FECHO -->
 <section class="close">
   <div class="wrap reveal">
     <div class="spark"><span>✦</span></div>
